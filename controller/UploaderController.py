@@ -1,6 +1,6 @@
 # UploaderController
 #
-# Esta clase se encarga de subir los archivos recolectados al servidor.
+# Este controlador se encarga de subir los archivos recolectados al servidor C&C.
 
 class UploaderController:
     def __init__(self):
